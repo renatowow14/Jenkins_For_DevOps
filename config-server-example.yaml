@@ -1,0 +1,33 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "harbor"
+          id: "harbor"
+          password: your_password"
+          scope: GLOBAL 
+          username: "admin"  
+      - string:
+          scope: GLOBAL
+          id: "Sonar Token"
+          secret: "your_password"
+          description: "Sonar Token" 
+      - usernamePassword:
+          description: "github_acess_token"
+          id: "github_acess_token"
+          password: "your_password
+          scope: GLOBAL
+          username: "renatowow14"       
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
+  labelString: "master-label"
+  numExecutors: 5
+  scmCheckoutRetryCount: 2
+  mode: NORMAL
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: ${JENKINS_ADMIN_ID}
+         password: ${JENKINS_ADMIN_PASSWORD} 

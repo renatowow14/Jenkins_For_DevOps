@@ -1,0 +1,48 @@
+{
+    "Hostname": "app-base",
+    "Names": "app-base",
+    "Image": "qghouse.duckdns.org/library/plataform-base:latest",
+    "Tty": true,
+    "ExposedPorts": {
+        "3000/tcp": { }
+    },
+    "HostConfig": {
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/data/storage",
+                "Target": "/STORAGE",
+                "ReadOnly": false
+            },
+            {
+                "Type": "bind",
+                "Source": "/etc/localtime",
+                "Target": "/etc/localtime",
+                "ReadOnly": false
+            },
+            {
+                "Type": "bind",
+                "Source": "/data/containers/APP_BASE/APP/.env",
+                "Target": "/APP/plataform-base/src/server/.env",
+                "ReadOnly": false
+            },
+            {
+                "Type": "bind",
+                "Source": "/data/containers/APP_BASE/APP/Monitora.sh",
+                "Target": "/APP/Monitora.sh",
+                "ReadOnly": false
+            }
+        ],
+        "PortBindings": { "": [{ "HostPort": "" }]}
+    },
+"NetworkingConfig": {
+    "EndpointsConfig": {
+        "jenkins_default" : {
+            "IPAMConfig": {
+                "IPv4Address":"172.21.0.20"
+            }
+
+        }
+    }
+}
+}

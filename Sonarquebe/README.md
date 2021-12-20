@@ -15,8 +15,6 @@
 
 * ` https://docs.sonarqube.org/latest/setup/install-server/ `
 
-$~$
-
 ![Alt text](SQ-instance-components.png?raw=true "Title")
 
 

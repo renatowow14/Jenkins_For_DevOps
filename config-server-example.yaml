@@ -5,9 +5,9 @@ credentials:
       - usernamePassword:
           description: "harbor"
           id: "harbor"
-          password: your_password"
+          password: "your_password"
           scope: GLOBAL 
-          username: "admin"  
+          username: "your_username"  
       - string:
           scope: GLOBAL
           id: "Sonar Token"
@@ -16,15 +16,18 @@ credentials:
       - usernamePassword:
           description: "github_acess_token"
           id: "github_acess_token"
-          password: "your_password
+          password: "your_password"
           scope: GLOBAL
-          username: "renatowow14"       
+          username: "you_username_github"       
 jenkins:
   systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
   labelString: "master-label"
   numExecutors: 5
   scmCheckoutRetryCount: 2
   mode: NORMAL
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
   securityRealm:
     local:
       allowsSignup: false
